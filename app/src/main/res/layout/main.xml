@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parentLayout"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:visibility="visible">
+
+	<FrameLayout
+		android:id="@+id/list"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:visibility="gone">
+
+		<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/mainList"
+		android:visibility="visible">
+
+
+			<ListView android:id="@+id/listTokens"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content" />
+
+			<TextView
+				android:id="@+id/empty"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="@string/noTokens"
+				android:gravity="center"
+				android:layout_marginTop="30dp"
+				/>
+
+		</LinearLayout>
+		<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:id="@+id/fab"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="end|bottom"
+			android:src="@drawable/baseline_add_black_24dp"
+			android:contentDescription="@string/qr_fab"
+			android:layout_margin="16dp" />
+	</FrameLayout>
+
+	<LinearLayout
+		android:id="@+id/mainPin"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:visibility="gone"
+		android:paddingLeft="15dp"
+		android:paddingRight="15dp">
+
+		<TextView
+			android:id="@+id/mainPinText"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="5sp"
+			android:text="@string/pinChangeExistingPin"
+			android:textSize="20dip"
+			/>
+
+		<EditText
+			android:id="@+id/mainPinEdit"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dip"
+			android:inputType="number"
+			android:password="true"
+			android:selectAllOnFocus="true"
+			android:textSize="18sp" />
+
+		<Button
+			android:id="@+id/mainLogin"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10sp"
+			android:text="@string/mainLogin"></Button>
+	</LinearLayout>
+    		    
+</RelativeLayout>
