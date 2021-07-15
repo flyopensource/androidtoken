@@ -1,2 +1,4 @@
+include ':demo'
+include ':optlib'
 include ':app'
 rootProject.name = "otp"

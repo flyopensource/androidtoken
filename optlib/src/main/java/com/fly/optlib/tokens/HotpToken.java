@@ -17,7 +17,10 @@
  * along with Android Token.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package uk.co.bitethebullet.android.token.tokens;
+package com.fly.optlib.tokens;
+
+import com.fly.optlib.utils.Constant;
+import com.fly.optlib.utils.SeedConvertor;
 
 import java.io.IOException;
 import java.lang.reflect.UndeclaredThrowableException;
@@ -30,8 +33,7 @@ import java.util.TimeZone;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
-import uk.co.bitethebullet.android.token.datalayer.TokenDbAdapter;
-import uk.co.bitethebullet.android.token.util.SeedConvertor;
+
 
 
 /**
@@ -57,13 +59,13 @@ public class HotpToken implements IToken {
     = {1,10,100,1000,10000,100000,1000000,10000000,100000000};
 
 	/**
-	 *
+     *
 	 * @param name
-	 * @param serial
-	 * @param seed
-	 * @param eventCount 这个每次生成时 有变动！！
+     * @param serial
+     * @param seed
+     * @param eventCount 这个每次生成时 有变动！！
 	 * @param otpLength
-	 * @param organisation
+     * @param organisation
 	 */
 	public HotpToken(String name, String serial, String seed,
 					 	long eventCount, int otpLength, String organisation){
@@ -88,7 +90,7 @@ public class HotpToken implements IToken {
 	}
 	
 	public int getTokenType(){
-		return TokenDbAdapter.TOKEN_TYPE_EVENT;
+		return Constant.TOKEN_TYPE_EVENT;
 	}
 	
 	public String getName() {

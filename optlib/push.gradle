@@ -1,0 +1,22 @@
+apply plugin: "maven"
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "$release_url") {
+                authentication(
+                        userName: "$maven_name",
+                        password: "$maven_password"
+                )
+            }
+            snapshotRepository(url: "$snapshot_url") {
+                authentication(
+                        userName: "$maven_name",
+                        password: "$maven_password"
+                )
+            }
+            pom.version =  "$cfgvs.optlib"
+            pom.artifactId = "optlib"
+            pom.groupId = "$groupId"
+        }
+    }
+}

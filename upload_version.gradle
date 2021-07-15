@@ -1,0 +1,15 @@
+ext {
+    groupId = "com.fly.otp"
+    release_url=''
+    snapshot_url=''
+    maven_name=''
+    maven_password=''
+
+
+//    依赖本地项目还是依赖远程仓库
+    is_remote_maven=false
+    cfgvs = [
+            optlib        : "0.0.2",
+    ]
+
+}
