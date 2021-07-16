@@ -44,11 +44,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    if(is_remote_maven){
-        //com.fly.otp:optlib:0.0.1
-        implementation "$groupId:optlib:$cfgvs.optlib"
-//        implementation "com.fly.otp:optlib:0.0.1"
-    }else {
-        implementation project(path: ':optlib')
-    }
+//    implementation project(path: ':optlib')
+    implementation "com.github.flyopensource:androidtoken:b62e9e4b8a"
 }

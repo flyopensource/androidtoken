@@ -46,10 +46,11 @@ afterEvaluate {
     publishing {
         publications {
             // Creates a Maven publication called "release".
+            //这里的 可能没啥用，但也不能取消
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.fly.opt'
-                artifactId = 'lib'
+                groupId = 'com.github.flyopensource'
+                artifactId = 'otplib'
                 version = '1.0'
             }
         }
