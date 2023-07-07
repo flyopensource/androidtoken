@@ -33,14 +33,14 @@ public class SeedConvertor {
 	
 	public static byte[] ConvertFromEncodingToBA(String input, int currentFormat) throws IOException{
 		
-		if(currentFormat == 0){
+		if(currentFormat == HEX_FORMAT){
 			//hex
 			return HotpToken.stringToHex(input);
-		}else if(currentFormat == 1){
+		}else if(currentFormat == BASE32_FORMAT){
 			//base 32
 			Base32 base32 = new Base32();
 			return base32.decodeBytes(input.toUpperCase());
-		}else if(currentFormat == 2){
+		}else if(currentFormat == BASE64_FORMAT){
 			//base64
 			return Base64.decode(input);
 		}else

@@ -149,7 +149,8 @@ public class HotpToken implements IToken {
 		//otpauth://hotp/organisation:alice@google.com?secret=JBSWY3DPEHPK3PXP&counter=10"
 		try {
 			//convert the seed from hex to base32
-			String base32Secret = SeedConvertor.ConvertFromBA(SeedConvertor.ConvertFromEncodingToBA(getSeed(), SeedConvertor.HEX_FORMAT),
+			byte[] d = SeedConvertor.ConvertFromEncodingToBA(getSeed(), SeedConvertor.HEX_FORMAT);
+			String base32Secret = SeedConvertor.ConvertFromBA(d,
 					SeedConvertor.BASE32_FORMAT);
 
 			StringBuilder buffer = new StringBuilder();
